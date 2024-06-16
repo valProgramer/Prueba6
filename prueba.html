@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap" rel="stylesheet">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Main */
+        .fondo {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('Desktop/cremeria.jpg'); /* Update with the correct path */
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .fondo--registro {
+            background-image: url('path/to/your/cremeria2.jpg'); /* Update with the correct path */
+        }
+
+        .capa-fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency */
+        }
+
+        .contenedor {
+            height: 100vh;
+            width: min(90%, 120rem);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenido {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem 5rem;
+            border-radius: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario, .formulario-registro {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .formulario {
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                'label1 field1'
+                'label2 field2'
+                'blanco boton';
+        }
+
+        .campo1, .campo2, .campo3, .campo4 {
+            display: flex;
+            align-items: center;
+        }
+
+        .campo1, .campo4 {
+            justify-content: end;
+        }
+
+        .campo2, .campo3 {
+            justify-content: start;
+        }
+
+        .campo_label {
+            flex: 0 0 9rem;
+            text-align: right;
+            color: #2F1FAA; /* Color adjusted for better contrast */
+        }
+
+        .campo_field {
+            border: none;
+            border-bottom: 2px solid #2F1FAA;
+            padding: 1rem;
+            color: #2F1FAA;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        ::placeholder {
+            color: #2F1FAA;
+            text-transform: uppercase;
+        }
+
+        .boton {
+            display: block;
+            border-radius: 2rem;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: #2F1FAA;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            padding: 1rem 3rem;
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        .boton:hover {
+            cursor: pointer;
+            background: #1F0EAA;
+        }
+
+        .boton--primario {
+            background-color: #2F1FAA;
+            color: #fff;
+        }
+
+        .boton--secundario {
+            background-color: transparent;
+            border: 1px solid #2F1FAA;
+            color: #2F1FAA;
+        }
+
+        .boton--secundario:hover {
+            background-color: #2F1FAA;
+            color: #fff;
+        }
+
+        .formulario-registro {
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                'nombre apellido'
+                'email email2'
+                'contraseña contraseña2'
+                'boton1 boton2';
+        }
+
+        .registro_field {
+            border: none;
+            border-bottom: 2px solid #2F1FAA;
+            padding: 1rem;
+            color: #2F1FAA;
+            background-color: transparent;
+            width: 90%;
+        }
+
+        .campolzq, .campoDer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="fondo">
+        <div class="capa-fondo">
+            <main class="contenedor">
+                <div class="contenido">
+                    <h1 id="form-title">Bienvenido</h1>
+                    <form id="login-form" class="formulario">
+                        <div class="campo1">
+                            <label class="campo_label email" for="email">E-mail</label>
+                        </div>
+                        <div class="campo2">
+                            <input class="campo_field email-field" type="email" placeholder="Tu Email" id="email">
+                        </div>
+                        <div class="campo1">
+                            <label class="campo_label contraseña" for="password">Contraseña</label>
+                        </div>
+                        <div class="campo2">
+                            <input class="campo_field contraseña-field" type="password" placeholder="Tu contraseña" id="password">
+                        </div>
+                        <div class="campo3">
+                            <a href="#" class="boton boton--secundario" id="to-register">Sign-in</a>
+                        </div>
+                        <div class="campo4">
+                           <!----> <input type="submit" value="Login" class="boton boton--primario">
+                        </div>
+                    </form>
+
+                    <form id="register-form" class="formulario-registro hidden">
+                        <div class="campolzq nombre">
+                            <input class="registro_field nombre-field" type="text" placeholder="Nombre" id="name">
+                        </div>
+                        <div class="campoDer apellido">
+                            <input class="registro_field apellido-field" type="text" placeholder="Apellido" id="lastname">
+                        </div>
+                        <div class="campolzq email1">
+                            <input class="registro_field email-field" type="email" placeholder="Correo Electrónico" id="email-register">
+                        </div>
+                        <div class="campoDer email2">
+                            <input class="registro_field email-field" type="email" placeholder="Confirma el correo electrónico" id="confirm-email">
+                        </div>
+                        <div class="campolzq contraseña1">
+                            <input class="registro_field contraseña-field" type="password" placeholder="Contraseña" id="password-register">
+                        </div>
+                        <div class="campoDer contraseña2">
+                            <input class="registro_field contraseña-field" type="password" placeholder="Confirma la contraseña" id="confirm-password">
+                        </div>
+                        <div class="campolzq boton1">
+                            <a href="#" class="boton boton--secundario" id="to-login">Login</a>
+                        </div>
+                        <div class="campoDer boton2">
+                            <input type="submit" value="Crear Cuenta" class="boton boton--primario">
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('to-register').addEventListener('click', function() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+            document.getElementById('form-title').textContent = 'Crea tu cuenta';
+        });
+
+        document.getElementById('to-login').addEventListener('click', function() {
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('form-title').textContent = 'Bienvenido';
+        });
+    </script>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario
+        // Aquí puedes agregar lógica adicional antes de la redirección
+        window.location.href = "index.html";
+    });
+</script>
+
+</body>
+
+</html>

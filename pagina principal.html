@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="estilo pagina principal.css" type="text/css">
+    <title>Página principal</title>
+</head>
+<body>
+    <header>
+        <div>
+        <img src="cremeriaLogo.png" width="300">
+        </div>
+    </header>
+    <nav>
+        <a href="#mas vendidos">Más vendidos</a>
+        <a href="#productos disponibles">Productos disponibles</a>
+        <a href="#Misión, visión y valores">Misión, visión y valores</a>
+        <a href="#Dirección">Dirección</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#Información personalizada">Información personalizada</a>
+        <a href="#Comentarios y sugerencias">Comentarios y sugerencias</a>
+        <a href="administrador.html" id="adminLink" style="display: none;">Administración</a>
+    </nav>
+
+    <script>
+        window.onload = function() {
+            // Recuperar el estado de admin desde el localStorage
+            var isAdmin = localStorage.getItem('isAdmin');
+            if (isAdmin === 'true') {
+                // Hacer visible el enlace de administración
+                document.getElementById('adminLink').style.display = 'block';
+            }
+        }
+    </script>
+
+    <section id="mas vendidos" style="text-align: center;">
+        
+        <h2 class="tituloproducto"><strong>Productos más vendidos:</strong></h2>
+
+        <div class="wrapper" style="display: flex; justify-content: center;">
+            
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="jamonRojo.png" alt="Jamon Rojo Manantiales" width="250">
+                <p>Jamón de Pierna "Manantiales"</p> 
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="quesoManchego.png" alt="Queso Manchego" width="250">
+                <p>Queso Manchego "NocheBuena"</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="queso Puerco.png" alt="Queso de Puerco" width="250">
+                <p>Queso de Puerco "Manantiales"</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="queso Panela.png" alt="Queso Panela Chilchota" width="250">
+                <p>Queso Panela "Chilchota"</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="queso Oaxaca (2).png" alt="Queso Oaxaca Karina" width="250">
+                <p>Queso Oaxaca "Karina"</p>
+            </div> 
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section id="productos disponibles" style="text-align: center;">
+        <h2><strong>Productos disponibles</strong></h2>
+        <div class="wrapper"  style="display: flex; justify-content: center;">
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin-left: 10px; margin-right: 10px;">
+                <a href="seccion abarrotes.html"><img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="abarrotes.png" alt="SECCION: Abarrotes" width="250"></a>
+                <p>ABARROTES</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin-left: 10px; margin-right: 10px;">
+                <a href="seccion carnes.html"><img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="carnes.png" alt="SECCION: Carnes" width="250"></a>
+                <p>CARNES FRÍAS Y EMBUTIDOS</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin-left: 10px; margin-right: 10px;">
+                <a href="seccion lacteos.html"><img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="lacteos.png" alt="SECCION: Lacteos" width="250"> </a>
+                <p>LÁCTEOS</p>
+            </div>
+            </div>
+    
+            <div class="efectoproducto">
+            <div class="item" style="text-align: center; margin-left: 10px; margin-right: 10px;">
+            <a href="seccion semillas.html"><img style="border: 0px; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="semillas.png" alt="SECCION: Semillas" width="250"> </a>
+                <p>SEMILLAS</p> 
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--
+    
+    <section id="productos disponibles" style="text-align: center;">
+        <div class="wrapper" style="display: flex; justify-content: center;">
+    
+             <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="jamon Espaldilla.png" alt="jamon Espaldilla" width="250">
+                <p>Jamón de Espaldilla "Delis"</p>
+            </div>
+            
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="salami.png" alt="Salami" width="250">
+                <p>Salami horneado "EFA"</p>
+            </div>
+    
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="longaniza.png" alt="longaniza" width="250">
+                <p>Longaniza "Los Manantiales"</p>
+            </div>
+    
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="tocino.png" alt="tocino" width="250">
+                <p>Tocino "Delis"</p>
+            </div>
+    
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="salchicha manantiales.png" alt="salchicha manantiales" width="250">
+                <p>Salchicha de Viena "Los Manantiales"</p>
+            </div>
+    
+            <div class="item" style="text-align: center; margin: 10px;">
+                <img style="border: 2px solid; color:black" src="queso Chihuahua.png" alt="queso Chihuahua" width="250">
+                <p>Queso Chihuahua "Lala"</p>
+            </div>
+        </div>
+    </section> -->
+
+
+    
+    <section id="Misión, visión y valores">
+        <div style="margin-top: 10px;">
+            <center><h2>Misión, visión y valores</h2></center>
+        </div>
+        <fieldset style="background-color: white; border: 0px; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);  border-radius: 20px;">
+            <!-- <legend><h2>Misión, visión y valores de la "Cremería Prinss"</h2></legend> -->
+                <h3><strong><li>A que nos dedicamos:</li></strong></h3>
+                <p>
+                    Cremería Prinss es una empresa familiar con experiencia en el mercado, dedicada a ofrecer una amplia variedad de productos frescos y de alta calidad. Nos especializamos en la venta de embutidos, lácteos, semillas y una selección exclusiva de productos gourmet.
+                </p>
+                <h3><strong><li>Misión:</li></strong></h3>
+                <p>
+                    Ofrecer a nuestros clientes productos lácteos frescos y de alta calidad, elaborados con los mejores ingredientes naturales, para satisfacer sus necesidades y deleitar sus paladares. Nos comprometemos a proporcionar un servicio excepcional y crear experiencias memorables en cada visita a nuestras tiendas.
+                </p>
+                <h3><strong><li>Visión:</li></strong></h3>
+                <p>
+                    Ser la cremería preferida por los amantes de los lácteos en nuestra comunidad, reconocida por nuestra excelencia en productos frescos, innovación constante y un servicio al cliente excepcional. Aspiramos a expandirnos de manera sostenible, llevando nuestros productos a más hogares y estableciendo la referencia en calidad y confianza en el mercado.
+                </p>
+                    <h3><strong><li>Valores del establecimiento:</li></strong></h3>
+                    <ol>
+                        <li><strong>Calidad:</strong>Comprometidos con ofrecer productos lácteos de la más alta calidad, seleccionando cuidadosamente ingredientes frescos y naturales y manteniendo estándares rigurosos en todo nuestro proceso de producción.</li><br>
+                        <li><strong>Pasión por el cliente:</strong>Colocamos a nuestros clientes en el centro de todo lo que hacemos, escuchando activamente sus necesidades y superando sus expectativas para brindarles una experiencia única y satisfactoria.</li><br>
+                        <li><strong>Integridad:</strong>Operamos con honestidad, transparencia y ética en todas nuestras relaciones comerciales y compromisos con nuestros clientes, proveedores y empleados.</li><br>
+                    </ol>
+                    <center><img style="border: 0px solid; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.1);" src="cremeria1.jpeg" alt="Cremeria 1" width="450"></center>
+        </fieldset>
+    </section>
+    
+    <section id="Dirección">
+        <h2><center>Dirección</center></h2>
+        <div class="wrapper" style="justify-content: center;">
+        <!-- <h2><center>Dirección</center></h2> -->
+        <center><h4><em>De clic a la siguiente imagen para ser redirigido al mapa, con la ubicación exacta:</em></h4></center>
+        <center> <a href="https://maps.app.goo.gl/YktFdGSnhyAX6X9Z9" target="_blank"> <img class="efectoproducto" style="border: 0px dotted; color:black; box-shadow: 0 0 10px rgba(27, 27, 27, 0.671);" src="cremeria.jpeg" alt="Imagen e hipervinculo a la direccion" width="700"> </a></center> 
+        <br>
+        <center>Calle Emiliano Zapata, Colonia "El Gigante", #27, CP: 55709, San Francisco Coacalco, Méx.</center>
+    </div>
+    </section>
+
+    <!--
+    <section id="Información personalizada">
+        <fieldset>
+            <legend><h3>Información personalizada</h3></legend>
+            <form action="" method="">
+            <strong>Ingrese su nombre completo:</strong> 
+            <input type="text" name="nombre" size="60"><br>
+            <strong>Ingrese su número telefónico:</strong> 
+            <input type="text" name="telefono" size="20"><br>
+            <strong>Correo electrónico:</strong> 
+            <input type="text" name="Correo" maxlength="40" size="40"><br>
+            <strong>¿Desea recibir información sobre nuevos productos, promociones, etc., a su correo electrónico?</strong> <br>
+            <input type="radio" name="opcion" value="1">Sí<br>
+            <input type="radio" name="opcion" value="2">No<br>
+            <strong>¡Quiero realizar una compra!</strong><br>
+            <a href="mailto:cremeriaPrinss@gmail.com?">Enviar e-mail</a><br>
+            <a href="https://contratados.org/es/content/t%C3%A9rminos-y-condiciones-de-uso" target="_blank">Términos y condiciones</a><br>
+            <input type="checkbox" name="confirmación">Declaro haber leído los Términos y condiciones establecidas<br>
+            <input type="checkbox" name="confirmación">Estoy en de acuerdo con los Términos y condiciones<br>
+            <input type="checkbox" name="confirmación">Estoy en desacuerdo con los Términos y condiciones<br>
+            <strong>¿Cómo calificaría a este sitio web?:</strong> <br>   
+            <select name="Evaluación">
+                <option value="1">Muy bueno</option>
+                <option value="2">Bueno</option>
+                <option value="3">Regular</option>
+                <option value="4">Malo</option>
+            </select><br>
+            <br><input type="reset" value="Borrar">
+            <input type="submit" value="Enviar" onclick="validarFormulario()">          
+            </form>
+        </fieldset>
+    </section>
+-->
+
+<!--
+    <script>
+        function validarFormulario() {
+            // Obtener los valores de los campos del formulario
+            var nombre = document.getElementById("nombre").value
+            var telefono = document.forms["personalizadoForm"]["telefono"].value;
+            var correo = document.forms["personalizadoForm"]["Correo"].value;
+            var opcion = document.forms["personalizadoForm"]["opcion"].value;
+            var terminos = document.forms["personalizadoForm"]["confirmación"].checked;
+            var evaluacion = document.forms["personalizadoForm"]["Evaluación"].value;
+
+            // Validar nombre completo
+            if (nombre == "") {
+                alert("Por favor, ingrese su nombre completo.");
+                return false;
+            }
+
+            // Validar número telefónico
+            if (telefono == "" || isNaN(telefono) || telefono.length != 10) {
+                alert("Por favor, ingrese un número telefónico válido de 10 dígitos.");
+                return false;
+            }
+
+            // Validar correo electrónico
+            var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (correo == "" || !regexCorreo.test(correo)) {
+                alert("Por favor, ingrese un correo electrónico válido.");
+                return false;
+            }
+
+            // Validar opción de recibir información
+            if (!document.forms["personalizadoForm"]["opcion"][0].checked && 
+                !document.forms["personalizadoForm"]["opcion"][1].checked) {
+                alert("Por favor, seleccione si desea recibir información sobre nuevos productos.");
+                return false;
+            }
+
+            // Validar términos y condiciones
+            if (!terminos) {
+                alert("Debe aceptar los términos y condiciones para continuar.");
+                return false;
+            }
+
+            // Validar evaluación del sitio web
+            if (evaluacion == "") {
+                alert("Por favor, seleccione una evaluación para el sitio web.");
+                return false;
+            }
+
+            return true; // Si todo está bien, permite el envío del formulario
+        }
+    </script> -->
+
+    <script>
+        function validarFormulario() {
+            // Hola Isa, te adoro mucho
+            // Hola mamá este es mi primer proyecto en HTML, te quiero.
+            var nombre = document.forms["personalizadoForm"]["nombre"].value;
+            var telefono = document.forms["personalizadoForm"]["telefono"].value
+            //hola mac miller, vuelve pronto ;(
+            var correo = document.forms["personalizadoForm"]["Correo"].value;
+            var opcion = document.forms["personalizadoForm"]["opcion"].value;
+            var terminos = document.getElementsByName("confirmacion")
+            var terminos2 = document.getElementsByName("confirmacion2")
+            //Tupac volverá por la mañana 
+            var evaluacion = document.forms["personalizadoForm"]["Evaluación"].value;
+
+            // Validar nombre completo
+            if (nombre == "") {
+                alert("Por favor, ingrese su nombre completo.");
+                return false;
+            }
+
+            // Validar número telefónico
+            if (telefono == "" || isNaN(telefono) || telefono.length != 10) {
+                alert("Por favor, ingrese un número telefónico válido de 10 dígitos.");
+                return false;
+            }
+
+            // Validar correo electrónico
+            var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (correo == "" || !regexCorreo.test(correo)) {
+                alert("Por favor, ingrese un correo electrónico válido.");
+                return false;
+            }
+
+            // Validar opción de recibir información
+            if (!document.forms["personalizadoForm"]["opcion"][0].checked && 
+                !document.forms["personalizadoForm"]["opcion"][1].checked) {
+                alert("Por favor, seleccione si desea recibir información sobre nuevos productos.");
+                return false;
+            }
+
+            // Validar términos y condiciones
+            if (!terminos) {
+                alert("Debe aceptar los términos y condiciones para continuar.");
+                return false;
+            }
+
+            // Validar evaluación del sitio web
+            if (evaluacion == "") {
+                alert("Por favor, seleccione una evaluación para el sitio web.");
+                return false;
+            }
+
+            alert("¡Gracias por su opinión, la tomaremos en cuenta!")
+            return true; // Si todo está bien, permite el envío del formulario
+        }
+    </script>
+
+    <section id="Información personalizada">
+        <div class="wrapper" style="background-color: rgba(117, 199, 231, 0.363); text-align: left; box-shadow: 0 0 10px rgba(27, 27, 27, 0.226);">
+        
+            <legend><h3>Información personalizada</h3></legend>
+            <form name="personalizadoForm" onsubmit="return validarFormulario()"> 
+                <strong>Ingrese su nombre completo:</strong> 
+                <input type="text" name="nombre" size="60"><br>
+                <strong>Ingrese su número telefónico:</strong> 
+                <input type="text" name="telefono" size="20"><br>
+                <strong>Correo electrónico:</strong> 
+                <input type="text" name="Correo" maxlength="40" size="40"><br>
+                <strong>¿Desea recibir información sobre nuevos productos, promociones, etc., a su correo electrónico?</strong> <br>
+                <input type="radio" name="opcion" value="1">Sí<br>
+                <input type="radio" name="opcion" value="2">No<br>
+                <strong>¡Quiero realizar una compra!</strong><br>
+                <a href="mailto:ventasdeima1@gmail.com?subject=¡Hola, deseo recibir información personalizada!">Enviar e-mail</a><br>
+                <a href="terminos y condiciones.html">Términos y condiciones</a><br>
+                <input type="checkbox" name="confirmación">Declaro haber leído los Términos y condiciones establecidas<br>
+                <input type="checkbox" name="confirmación2">Estoy de acuerdo con los Términos y condiciones<br>
+                <!-- <input type="checkbox" name="confirmación">Estoy en desacuerdo con los Términos y condiciones<br> -->
+                <strong>¿Cómo calificaría a este sitio web?:</strong> <br>   
+                <select name="Evaluación">
+                    <option value="1">Muy bueno</option>
+                    <option value="2" selected>Bueno</option>
+                    <option value="3">Regular</option>
+                    <option value="4">Malo</option>
+                </select><br>
+                <br><input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">          
+            </form>
+        </div>
+    </div>
+        
+    </section>
+
+    <a name="contacto"></a>
+    <footer>
+        <div style="text-align: left;">
+        <a href="https://www.instagram.com" target="_blank"> <img  src="instagram.png" alt="logo instagram" width="50"> </a>
+        <a href="https://www.instagram.com" target="_blank" style="color: white; text-decoration: none;" >Instagram Oficial</a> 
+        <br>
+        <a href="https://www.facebook.com/profile.php?id=100095327749801&mibextid=LQQJ4d" target="_blank"> <img src="facebook.svg" alt="Logo Facebook" width="50"> </a>
+        <a href="https://www.facebook.com/profile.php?id=100095327749801&mibextid=LQQJ4d" target="_blank" style="color: white; text-decoration: none;" >Facebook Oficial</a>
+        <br>
+        <img src="whatsapp.svg" width="50">
+        +52 5585463520
+        </div>
+
+    <div style="text-align: center;">
+        <p>
+            Se aceptan pagos por transferencia y tarjeta (Visa/Mastercard)<br>
+            <img src="visa logo.png" width="70"> <img src="mastercard logo.png" width="70">
+            <br>
+            Horarios:<br>
+            Lunes a Viernes: 8:00-21:00hrs<br>
+            Sábado: 8:30-21:00hrs<br>
+            Domingo: 8:30-20:30<br>
+        </p>
+
+    <a name="Comentarios y sugerencias"></a>
+        <br> <strong><em>Deje aquí sus comentarios o sugerencias:</em></strong><br>
+        <form id="comentariosForm">
+        <textarea name="comentarios" rows="5" cols="60"></textarea> 
+        <br>
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar">
+        </form>
+    </div>
+    </footer>
+
+    <script>
+        document.getElementById('comentariosForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var comentario = this.comentarios.value;
+            if (comentario) {
+                var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+                comentarios.push(comentario);
+                localStorage.setItem('comentarios', JSON.stringify(comentarios));
+                alert('Comentario guardado');
+                this.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

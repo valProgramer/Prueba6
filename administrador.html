@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="estilo pagina principal.css" type="text/css">
+    </head>
+
+    <body>
+        <header>
+            <div>
+            <a href="pagina principal.html"> <img src="cremeriaLogo.png"Logo de Cremeria Prinss" width="300"> </a>
+            </div>
+        </header>
+<section>
+        <!-- <button onclick="addProduct()">Agregar Producto</button>
+        <button onclick="removeProduct()">Eliminar Producto</button>
+        <button onclick="editMission()">Editar Misión, Visión y Valores</button>
+        <!-- Aquí puedes agregar más botones o formularios para otras funcionalidades -->
+    </section>
+
+    <div class="wrapper" style="justify-content:space-between;">
+    <section>
+        <h2>Comentarios y Sugerencias</h2>
+        <div id="comentariosList"></div>
+        <button class="estiloboton" onclick="toggleComentarios()">Mostrar/Ocultar Comentarios</button>
+        <button class="estiloboton" onclick="clearComentarios()">Borrar Comentarios</button>
+    </section>
+    </div>
+
+    <script>
+        function addProduct() {
+            var productName = prompt("Ingrese el nombre del producto:");
+            var productSection = prompt("¿En qué sección desea agregar el producto? (mas-vendidos o productos-disponibles)");
+            if (productName && (productSection === "mas-vendidos" || productSection === "productos-disponibles")) {
+                var newProduct = document.createElement("div");
+                newProduct.innerText = productName;
+                document.getElementById(productSection + "-list").appendChild(newProduct);
+                alert("Producto agregado con éxito.");
+            } else {
+                alert("Datos inválidos. Inténtelo de nuevo.");
+            }
+        }
+
+        function removeProduct() {
+            var productName = prompt("Ingrese el nombre del producto a eliminar:");
+            var productSection = prompt("¿De qué sección desea eliminar el producto? (mas-vendidos o productos-disponibles)");
+            if (productName && (productSection === "mas-vendidos" || productSection === "productos-disponibles")) {
+                var productList = document.getElementById(productSection + "-list").children;
+                for (var i = 0; i < productList.length; i++) {
+                    if (productList[i].innerText === productName) {
+                        productList[i].remove();
+                        alert("Producto eliminado con éxito.");
+                        return;
+                    }
+                }
+                alert("Producto no encontrado.");
+            } else {
+                alert("Datos inválidos. Inténtelo de nuevo.");
+            }
+        }
+
+        function editMission() {
+            var newMission = prompt("Ingrese la nueva misión:");
+            if (newMission) {
+                document.getElementById("mision").innerText = newMission;
+                alert("Misión actualizada con éxito.");
+            } else {
+                alert("Datos inválidos. Inténtelo de nuevo.");
+            }
+        }
+
+        function loadComentarios() {
+            var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+            var comentariosList = document.getElementById('comentariosList');
+            comentariosList.innerHTML = '';
+            comentarios.forEach(function(comentario) {
+                var comentarioDiv = document.createElement('div');
+                comentarioDiv.innerText = comentario;
+                comentariosList.appendChild(comentarioDiv);
+            });
+        }
+
+        function toggleComentarios() {
+            var comentariosList = document.getElementById('comentariosList');
+            if (comentariosList.style.display === 'none' || comentariosList.style.display === '') {
+                comentariosList.style.display = 'block';
+            } else {
+                comentariosList.style.display = 'none';
+            }
+        }
+
+        function clearComentarios() {
+            localStorage.removeItem('comentarios');
+            loadComentarios();
+            alert("Comentarios borrados con éxito.");
+        }
+
+        window.onload = loadComentarios;
+    </script>
+    </body>
+</html>
